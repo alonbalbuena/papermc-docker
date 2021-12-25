@@ -1,0 +1,15 @@
+services:
+  minecraft-server:
+    container_name: papermc
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+    environment:
+      MC_RAM: '"<4G>"'
+    expose:
+    - 25565
+    image: papermc-1.18
+    ports:
+    - '25565'
+version: '3'
