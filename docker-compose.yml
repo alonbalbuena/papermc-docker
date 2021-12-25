@@ -6,7 +6,7 @@ services:
       restart_policy:
         condition: any
     environment:
-      MC_RAM: '"<4G>"'
+      MC_RAM: '4G'
     expose:
     - 25565
     image: papermc-1.18
