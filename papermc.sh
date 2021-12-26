@@ -17,8 +17,6 @@ then
   ./lazymc config generate
 fi
 
-cat lazymc.toml
-
 # Get version information and build download URL and jar name
 URL=https://papermc.io/api/v2/projects/paper
 if [ ${MC_VERSION} = latest ]
@@ -69,8 +67,6 @@ fi
 
 # Update lazymc config command
 sed -i -e "s/command =.*/command = \"java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui\"/" lazymc.toml
-
-ls -a
 
 # Start server
 exec ./lazymc start

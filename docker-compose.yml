@@ -1,13 +1,13 @@
+version: '3'
+
 services:
   minecraft-server:
-    container_name: papermc
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: any
+    container_name: paper-minecraft
     environment:
       MC_RAM: '4G'
-    image: papermc-1.18
+    image: minecraft:latest
     ports:
     - '25565:25565'
-version: '3'
+    volumes:
+    -  /home/papermc/minecraft-1.18:/papermc
+
